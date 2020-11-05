@@ -1,0 +1,265 @@
+<mvc:View controllerName="com.yash.assignment6.controller.welcome" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+	xmlns:l="sap.ui.layout" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Shell id="shell">
+		<App id="app">
+			<Page showHeader="false" showNavButton="false">
+				<l:Splitter height="100%" width="100%">
+					<SplitApp id="SplitAppDemo" initialDetail="detail" initialMaster="master">
+						<layoutData>
+							<l:SplitterLayoutData size="auto"/>
+						</layoutData>
+						<detailPages>
+							<Page id="detail" backgroundDesign="Solid" class="sapUiStdPage">
+								<customHeader>
+									<Bar>
+										<contentLeft>
+											<Button icon="sap-icon://menu2" press=".onShowCategories"/>
+										</contentLeft>
+										<contentMiddle>
+											<Title level="H2" tooltip="{i18n>welcomeDescription}" text="{i18n>WelcomePageTitle}"/>
+										</contentMiddle>
+										<contentRight>
+											<Button icon="sap-icon://customer" press=".onAvatarPress" tooltip="{i18n>avatarButtonTooltip}"/>
+											<ToggleButton id="welcometoCart" icon="sap-icon://cart" pressed="false" press=".onCart"></ToggleButton>
+										</contentRight>
+									</Bar>
+								</customHeader>
+								<l:BlockLayout>
+									<l:BlockLayoutRow>
+										<l:BlockLayoutCell class="sapUiNoContentPadding">
+											<Carousel showPageIndicator="false" loop="true">
+												<pages>
+													<Image width="100%" src="https://sapui5.hana.ondemand.com/test-resources/sap/m/demokit/cart/webapp/img/ShopCarouselCreditCard.jpg"
+														alt="Example picture of speakers"/>
+													<Image width="100%" src="https://sapui5.hana.ondemand.com/test-resources/sap/m/demokit/cart/webapp/img/ShopCarouselInviteFriend.jpg"
+														alt="Example picture of USB flash drive"/>
+													<Image width="100%" src="https://sapui5.hana.ondemand.com/test-resources/sap/m/demokit/cart/webapp/img/ShopCarouselShipping.jpg"
+														alt="Example picture of spotlight"/>
+													<Image width="100%" src="https://sapui5.hana.ondemand.com/test-resources/sap/m/demokit/cart/webapp/img/ShopCarouselTablet.jpg"
+														alt="Example picture of screw"/>
+												</pages>
+											</Carousel>
+										</l:BlockLayoutCell>
+									</l:BlockLayoutRow>
+								</l:BlockLayout>
+								<Panel width="auto">
+									<headerToolbar>
+										<OverflowToolbar>
+											<Title text="{i18n>PromotedItemList}"/>
+											<ToolbarSpacer/>
+										</OverflowToolbar>
+									</headerToolbar>
+									<content>
+										<l:VerticalLayout width="100%">
+											<l:BlockLayout background="Dashboard">
+												<l:BlockLayoutRow>
+													<l:BlockLayoutCell title="This is just a title">
+														<Text
+															text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr."/>
+													</l:BlockLayoutCell>
+													<l:BlockLayoutCell title="25% width cell">
+														<Text
+															text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr."/>
+														<l:titleLink>
+															<Link text="This is a title link" href="https://openui5.hana.ondemand.com/"/>
+														</l:titleLink>
+													</l:BlockLayoutCell>
+												</l:BlockLayoutRow>
+											</l:BlockLayout>
+										</l:VerticalLayout>
+									</content>
+								</Panel>
+								<Panel width="auto">
+									<headerToolbar>
+										<OverflowToolbar>
+											<Title text="{i18n>RecentlyViewedItemList}"/>
+											<ToolbarSpacer/>
+										</OverflowToolbar>
+									</headerToolbar>
+									<content>
+										<l:VerticalLayout width="100%">
+											<l:BlockLayout background="Dashboard">
+												<l:BlockLayoutRow>
+													<l:BlockLayoutCell title="This is just a title">
+														<Text
+															text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr."/>
+													</l:BlockLayoutCell>
+													<l:BlockLayoutCell title="25% width cell">
+														<Text
+															text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr."/>
+														<l:titleLink>
+															<Link text="This is a title link" href="https://openui5.hana.ondemand.com/"/>
+														</l:titleLink>
+													</l:BlockLayoutCell>
+												</l:BlockLayoutRow>
+											</l:BlockLayout>
+										</l:VerticalLayout>
+									</content>
+								</Panel>
+								<Panel width="auto">
+									<headerToolbar>
+										<OverflowToolbar>
+											<Title text="{i18n>FavoriteItemList}"/>
+											<ToolbarSpacer/>
+										</OverflowToolbar>
+									</headerToolbar>
+									<content>
+										<l:VerticalLayout width="100%">
+											<l:BlockLayout background="Dashboard">
+												<l:BlockLayoutRow>
+													<l:BlockLayoutCell title="This is just a title">
+														<Text
+															text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr."/>
+													</l:BlockLayoutCell>
+													<l:BlockLayoutCell title="25% width cell">
+														<Text
+															text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr."/>
+														<l:titleLink>
+															<Link text="This is a title link" href="https://openui5.hana.ondemand.com/"/>
+														</l:titleLink>
+													</l:BlockLayoutCell>
+												</l:BlockLayoutRow>
+												<l:BlockLayoutRow>
+													<l:BlockLayoutCell title="This is just a title">
+														<Text
+															text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr."/>
+													</l:BlockLayoutCell>
+													<l:BlockLayoutCell title="25% width cell">
+														<Text
+															text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr."/>
+														<l:titleLink>
+															<Link text="This is a title link" href="https://openui5.hana.ondemand.com/"/>
+														</l:titleLink>
+													</l:BlockLayoutCell>
+												</l:BlockLayoutRow>
+											</l:BlockLayout>
+										</l:VerticalLayout>
+									</content>
+								</Panel>
+							</Page>
+							<Page id="productDetail" class="sapUiStdPage" backgroundDesign="List">
+								<customHeader>
+									<Bar>
+										<contentLeft>
+											<Button icon="sap-icon://home" press=".backToHome"/>
+										</contentLeft>
+										<contentMiddle>
+											<Title level="H2" text="{Name}"/>
+										</contentMiddle>
+										<contentRight>
+											<Button icon="sap-icon://customer" press=".onAvatarPress"/>
+											<ToggleButton id="productDetailtoCart" icon="sap-icon://cart" pressed="false" press=".onCart"></ToggleButton>
+										</contentRight>
+									</Bar>
+								</customHeader>
+								<ObjectHeader title="{Name}"
+									number="{ parts:[{path:'Price'},{path:'CurrencyCode'}], type: 'sap.ui.model.type.Currency', formatOptions: {showMeasure: false} }"
+									numberUnit="{CurrencyCode}" class="sapUiResponsivePadding--header">
+									<statuses>
+										<ObjectStatus text="{ path : 'Status', formatter : '.formatter.statusText' }"
+											state="{ path : 'Status', formatter : '.formatter.statusState' }"/>
+									</statuses>
+									<ObjectAttribute title="Description" text="{ShortDescription}"/>
+									<ObjectAttribute title="Weight" text="{Weight} {WeightUnit}"/>
+									<ObjectAttribute title="Measures" text="{DimensionWidth} x {DimensionDepth} x {DimensionHeight} {Unit}"/>
+								</ObjectHeader>
+								<HBox justifyContent="Center" alignItems="Center">
+									<Image src="{PictureUrl}" decorative="false" press="handleImage3Press"/>
+								</HBox>
+								<footer>
+									<OverflowToolbar id="idFooter">
+										<ToolbarSpacer/>
+										<Button type="Emphasized" text="{i18n>AddCartButton}" press=".addToCart"/>
+									</OverflowToolbar>
+								</footer>
+							</Page>
+						</detailPages>
+						<masterPages>
+							<Page id="master" title=" Product Catalog" class="sapUiStdPage" showSubHeader="true">
+								<headerContent>
+									<Button icon="sap-icon://home" press=".backToHome"/>
+								</headerContent>
+								<subHeader>
+									<Bar>
+										<contentMiddle>
+											<SearchField liveChange=".searchCategory"/>
+										</contentMiddle>
+									</Bar>
+								</subHeader>
+								<content>
+									<List id="masterCategoryCatalogList" items="{/categories}" itemPress=".goToCategoryMaster" headerText="Categories">
+										<items>
+											<StandardListItem type="Active" title="{CategoryName}" info="{NumberOfProducts}"/>
+										</items>
+									</List>
+								</content>
+							</Page>
+							<Page id="categoryMaster" title="{CategoryName}" backgroundDesign="List" class="sapUiStdPage" showNavButton="true"
+								navButtonPress=".onPressMasterBack">
+								<List id="categoryList" itemPress=".onCategoryListItemPress" items="{}">
+									<items>
+										<ObjectListItem type="Active" icon="{PictureUrl}" title="{Name}" number="{Price}" numberUnit="{CurrencyCode}" iconDensityAware="false"
+											custom:to="productDetail">
+											<attributes>
+												<ObjectAttribute visible="true" text="{SupplierName}"/>
+											</attributes>
+											<firstStatus>
+												<ObjectStatus text="{ path : 'Status', formatter : '.formatter.statusText' }"
+													state="{ path : 'Status', formatter : '.formatter.statusState' }"/>
+											</firstStatus>
+										</ObjectListItem>
+									</items>
+								</List>
+							</Page>
+						</masterPages>
+					</SplitApp>
+					<Page id="cartDetail" class="splitterPage" visible="true" backgroundDesign="List">
+						<layoutData>
+							<l:SplitterLayoutData id="cartSplitor" class="sapUiNoMargin" size="25%" resizable="false"/>
+						</layoutData>
+						<customHeader>
+							<Bar>
+								<contentLeft>
+									<Title level="H2" text="{i18n>CartTitle}"/>
+								</contentLeft>
+								<contentRight>
+									<Button id="cartEditButton" icon="sap-icon://edit" press=".editCartList"/>
+								</contentRight>
+							</Bar>
+						</customHeader>
+						<List id="cartProductList" items="{/cartItems}" delete=".deleteCartItem">
+							<items>
+								<ObjectListItem type="Active" intro="{Quantity} x" icon="{PictureUrl}" title="{Name}" number="{Price}" numberUnit="{CurrencyCode}"
+									iconDensityAware="false" custom:to="productDetail">
+									<attributes>
+										<ObjectAttribute visible="true" text="{SupplierName}"/>
+									</attributes>
+									<firstStatus>
+										<ObjectStatus text="{ path : 'Status', formatter : '.formatter.statusText' }"
+											state="{ path : 'Status', formatter : '.formatter.statusState' }"/>
+									</firstStatus>
+								</ObjectListItem>
+							</items>
+						</List>
+						<footer>
+							<OverflowToolbar id="idCartFooter">
+								<Label text="Total Price: "/>
+								<Text id="totalPrice" text=""/>
+								<Text text="{CurrencyCode}"/>
+								<ToolbarSpacer/>
+								<Button id="saveEditedCart" type="Accept" visible="false" text="{i18n>save}" press=".saveCartList"/>
+								<Button id="checkoutButton" type="Emphasized" text="{i18n>checkout}" press=".checkout"/>
+							</OverflowToolbar>
+						</footer>
+					</Page >
+					<!--<Page id="checkOut" class="splitterPage" visible="false">-->
+					<!--	<layoutData>-->
+					<!--		<l:SplitterLayoutData id="checkOutSplitter" size="100%" resizable="true"/>-->
+					<!--	</layoutData>-->
+					<!--	<Text text="chekOut Conten"/>-->
+					<!--</Page>-->
+				</l:Splitter>
+			</Page>
+		</App>
+	</Shell>
+</mvc:View>
